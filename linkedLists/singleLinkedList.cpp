@@ -223,7 +223,7 @@ void display(Node* start)
     }
 }
 
-// Choice 7
+// Choice 8
 Node* reverseLinkedList(Node* start)
 {
     // Display the actual order
