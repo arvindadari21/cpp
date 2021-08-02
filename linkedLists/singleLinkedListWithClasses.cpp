@@ -2,15 +2,24 @@
 
 using namespace std;
 
-struct Node
+
+class Node
 {
-    int data;
-    Node* next;
+    public:
+        int data;
+        Node* next;
+
+    public:
+        Node()
+        {
+            next = nullptr;
+        };
+
 };
 
 class SingleLinkedList
 {
-    public:
+    private:
         Node* head;
 
     public:
@@ -19,12 +28,6 @@ class SingleLinkedList
         {
             cout << "Constructor called" << endl;
             head = nullptr;
-        };
-
-        // Destructor
-        ~SingleLinkedList()
-        {
-            cout << "Desturctor called" << endl;
         };
 
         // Choice 1
@@ -187,17 +190,18 @@ class SingleLinkedList
         void display()
         {
             int pos = 1;
-            if(head == nullptr)
+            Node* temp = head;
+            if(temp == nullptr)
             {
                 cout << "Empty linked list" << endl;
             }
             else
             {
-                while(head != nullptr)
+                while(temp != nullptr)
                 {
-                    cout << head->data << "(" << pos << ")";
-                    head = head->next;
-                    if(head != nullptr)
+                    cout << temp->data << "(" << pos << ")";
+                    temp = temp->next;
+                    if(temp != nullptr)
                         cout << "->";
                     pos++;
                 }
